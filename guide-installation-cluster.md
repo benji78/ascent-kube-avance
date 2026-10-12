@@ -91,7 +91,7 @@ Toutes les vérifications doivent réussir sur les 3 nœuds avant de continuer. 
 | Driver cgroup       | `grep SystemdCgroup /etc/containerd/config.toml`                                                     | `SystemdCgroup = true`           |
 | Runtime             | `sudo ctr version`                                                                                   | Client et Server affichés        |
 | Paquets             | `kubeadm version -o short; apt-mark showhold`                                                        | Même version ; 3 paquets bloqués |
-| Identité            | `hostnamectl --static; cat /sys/class/dmi/id/product_uuid`                                           | Unique pour chaque VM            |
+| Identité            | `hostnamectl --static; sudo cat /sys/class/dmi/id/product_uuid`                                      | Unique pour chaque VM            |
 
 Sur le control plane, lancez une dernière vérification préalable : `sudo kubeadm init phase preflight`.
 Le message *remote version is much newer, falling back to stable-1.34* est sans conséquence.
